@@ -160,6 +160,7 @@
             this.textBoxXMax2D.Name = "textBoxXMax2D";
             this.textBoxXMax2D.Size = new System.Drawing.Size(81, 21);
             this.textBoxXMax2D.TabIndex = 4;
+            this.textBoxXMax2D.Text = "1";
             this.textBoxXMax2D.TextChanged += new System.EventHandler(this.textBoxXMax2D_TextChanged);
             // 
             // textBoxXMin2D
@@ -168,6 +169,7 @@
             this.textBoxXMin2D.Name = "textBoxXMin2D";
             this.textBoxXMin2D.Size = new System.Drawing.Size(81, 21);
             this.textBoxXMin2D.TabIndex = 3;
+            this.textBoxXMin2D.Text = "-1";
             this.textBoxXMin2D.TextChanged += new System.EventHandler(this.textBoxXMin2D_TextChanged);
             // 
             // textBoxInfo2D
@@ -190,7 +192,7 @@
             this.listView2D.HoverSelection = true;
             this.listView2D.Location = new System.Drawing.Point(151, 0);
             this.listView2D.Name = "listView2D";
-            this.listView2D.Size = new System.Drawing.Size(150, 373);
+            this.listView2D.Size = new System.Drawing.Size(125, 373);
             this.listView2D.TabIndex = 1;
             this.listView2D.UseCompatibleStateImageBehavior = false;
             // 
@@ -200,9 +202,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2D.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2D.Location = new System.Drawing.Point(311, 0);
+            this.pictureBox2D.Location = new System.Drawing.Point(281, 0);
             this.pictureBox2D.Name = "pictureBox2D";
-            this.pictureBox2D.Size = new System.Drawing.Size(505, 373);
+            this.pictureBox2D.Size = new System.Drawing.Size(535, 373);
             this.pictureBox2D.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2D.TabIndex = 0;
             this.pictureBox2D.TabStop = false;
@@ -346,6 +348,7 @@
             this.textBoxYMax3D.Name = "textBoxYMax3D";
             this.textBoxYMax3D.Size = new System.Drawing.Size(81, 21);
             this.textBoxYMax3D.TabIndex = 6;
+            this.textBoxYMax3D.Text = "1";
             this.textBoxYMax3D.TextChanged += new System.EventHandler(this.textBoxYMax3D_TextChanged);
             // 
             // textBoxYMin3D
@@ -354,6 +357,7 @@
             this.textBoxYMin3D.Name = "textBoxYMin3D";
             this.textBoxYMin3D.Size = new System.Drawing.Size(81, 21);
             this.textBoxYMin3D.TabIndex = 5;
+            this.textBoxYMin3D.Text = "-1";
             this.textBoxYMin3D.TextChanged += new System.EventHandler(this.textBoxYMin3D_TextChanged);
             // 
             // textBoxXMax3D
@@ -362,6 +366,7 @@
             this.textBoxXMax3D.Name = "textBoxXMax3D";
             this.textBoxXMax3D.Size = new System.Drawing.Size(81, 21);
             this.textBoxXMax3D.TabIndex = 4;
+            this.textBoxXMax3D.Text = "1";
             this.textBoxXMax3D.TextChanged += new System.EventHandler(this.textBoxXMax3D_TextChanged);
             // 
             // textBoxXMin3D
@@ -370,6 +375,7 @@
             this.textBoxXMin3D.Name = "textBoxXMin3D";
             this.textBoxXMin3D.Size = new System.Drawing.Size(81, 21);
             this.textBoxXMin3D.TabIndex = 3;
+            this.textBoxXMin3D.Text = "-1";
             this.textBoxXMin3D.TextChanged += new System.EventHandler(this.textBoxXMin3D_TextChanged);
             // 
             // textBoxFxyz
@@ -387,7 +393,7 @@
             this.listView3D.HoverSelection = true;
             this.listView3D.Location = new System.Drawing.Point(151, 0);
             this.listView3D.Name = "listView3D";
-            this.listView3D.Size = new System.Drawing.Size(150, 373);
+            this.listView3D.Size = new System.Drawing.Size(180, 373);
             this.listView3D.TabIndex = 1;
             this.listView3D.UseCompatibleStateImageBehavior = false;
             // 
@@ -397,9 +403,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3D.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3D.Location = new System.Drawing.Point(311, 0);
+            this.pictureBox3D.Location = new System.Drawing.Point(336, 0);
             this.pictureBox3D.Name = "pictureBox3D";
-            this.pictureBox3D.Size = new System.Drawing.Size(505, 373);
+            this.pictureBox3D.Size = new System.Drawing.Size(480, 373);
             this.pictureBox3D.TabIndex = 0;
             this.pictureBox3D.TabStop = false;
             // 

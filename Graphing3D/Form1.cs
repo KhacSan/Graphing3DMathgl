@@ -189,9 +189,33 @@ namespace Graphing3D
 
         private void buttonPaint3D_Click(object sender, EventArgs e)
         {
-            Thread thread = new Thread(paint3d);
-            thread.IsBackground = true;
-            thread.Start();
+
+            if(textBoxFxyz.Text.Equals("") || textBoxXMin3D.Text.Equals("") || textBoxXMax3D.Text.Equals("")
+                || textBoxYMin3D.Text.Equals("") || textBoxYMax3D.Text.Equals(""))
+            {
+                MessageBox.Show("Vui lòng nhập đủ thông tin !");
+            }
+            else
+            {
+               if (!Double.TryParse(textBoxXMin3D.Text,out xMin)|| !Double.TryParse(textBoxXMax3D.Text, out xMax)
+                  ||!Double.TryParse(textBoxYMin3D.Text, out yMin) || !Double.TryParse(textBoxYMax3D.Text, out yMax))
+                {
+                    MessageBox.Show("Lỗi nhập sai kiểu dữ liệu !");
+                }
+                else
+                {
+                    if(xMin >= xMax || yMin >= yMax)
+                    {
+                        MessageBox.Show("Lỗi nhập giá trị Min >= Max !");
+                    }
+                    else
+                    {
+                        Thread thread = new Thread(paint3d);
+                        thread.IsBackground = true;
+                        thread.Start();
+                    }
+                }
+            }
         }
 
         private void textBoxXMax3D_TextChanged(object sender, EventArgs e)
