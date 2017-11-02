@@ -42,6 +42,10 @@
             this.listView2D = new System.Windows.Forms.ListView();
             this.pictureBox2D = new System.Windows.Forms.PictureBox();
             this.tabPage3D = new System.Windows.Forms.TabPage();
+            this.xoayYXuoi = new System.Windows.Forms.PictureBox();
+            this.xoayYNguoc = new System.Windows.Forms.PictureBox();
+            this.xoayXXuoi = new System.Windows.Forms.PictureBox();
+            this.xoayXNguoc = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -49,9 +53,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.buttonTurnY = new System.Windows.Forms.Button();
             this.buttonPaint3D = new System.Windows.Forms.Button();
-            this.buttonTurnX = new System.Windows.Forms.Button();
             this.textBoxInfo3D = new System.Windows.Forms.TextBox();
             this.textBoxYMax3D = new System.Windows.Forms.TextBox();
             this.textBoxYMin3D = new System.Windows.Forms.TextBox();
@@ -64,6 +66,10 @@
             this.tabPage2D.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2D)).BeginInit();
             this.tabPage3D.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xoayYXuoi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xoayYNguoc)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xoayXXuoi)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xoayXNguoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3D)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,10 +149,11 @@
             this.textBoxFxy.Name = "textBoxFxy";
             this.textBoxFxy.Size = new System.Drawing.Size(139, 21);
             this.textBoxFxy.TabIndex = 6;
+            this.textBoxFxy.Text = "x^2+1";
             // 
             // buttonPaint2D
             // 
-            this.buttonPaint2D.Location = new System.Drawing.Point(48, 33);
+            this.buttonPaint2D.Location = new System.Drawing.Point(49, 39);
             this.buttonPaint2D.Name = "buttonPaint2D";
             this.buttonPaint2D.Size = new System.Drawing.Size(50, 30);
             this.buttonPaint2D.TabIndex = 5;
@@ -169,7 +176,7 @@
             this.textBoxXMin2D.Name = "textBoxXMin2D";
             this.textBoxXMin2D.Size = new System.Drawing.Size(81, 21);
             this.textBoxXMin2D.TabIndex = 3;
-            this.textBoxXMin2D.Text = "-1";
+            this.textBoxXMin2D.Text = "0";
             this.textBoxXMin2D.TextChanged += new System.EventHandler(this.textBoxXMin2D_TextChanged);
             // 
             // textBoxInfo2D
@@ -211,6 +218,10 @@
             // 
             // tabPage3D
             // 
+            this.tabPage3D.Controls.Add(this.xoayYXuoi);
+            this.tabPage3D.Controls.Add(this.xoayYNguoc);
+            this.tabPage3D.Controls.Add(this.xoayXXuoi);
+            this.tabPage3D.Controls.Add(this.xoayXNguoc);
             this.tabPage3D.Controls.Add(this.label7);
             this.tabPage3D.Controls.Add(this.label6);
             this.tabPage3D.Controls.Add(this.label5);
@@ -218,9 +229,7 @@
             this.tabPage3D.Controls.Add(this.label3);
             this.tabPage3D.Controls.Add(this.label2);
             this.tabPage3D.Controls.Add(this.label1);
-            this.tabPage3D.Controls.Add(this.buttonTurnY);
             this.tabPage3D.Controls.Add(this.buttonPaint3D);
-            this.tabPage3D.Controls.Add(this.buttonTurnX);
             this.tabPage3D.Controls.Add(this.textBoxInfo3D);
             this.tabPage3D.Controls.Add(this.textBoxYMax3D);
             this.tabPage3D.Controls.Add(this.textBoxYMin3D);
@@ -236,6 +245,54 @@
             this.tabPage3D.TabIndex = 1;
             this.tabPage3D.Text = "3D";
             this.tabPage3D.UseVisualStyleBackColor = true;
+            // 
+            // xoayYXuoi
+            // 
+            this.xoayYXuoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.xoayYXuoi.Image = global::Graphing3D.Properties.Resources._3;
+            this.xoayYXuoi.Location = new System.Drawing.Point(746, 70);
+            this.xoayYXuoi.Name = "xoayYXuoi";
+            this.xoayYXuoi.Size = new System.Drawing.Size(30, 30);
+            this.xoayYXuoi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.xoayYXuoi.TabIndex = 22;
+            this.xoayYXuoi.TabStop = false;
+            this.xoayYXuoi.Click += new System.EventHandler(this.xoayYXuoi_Click);
+            // 
+            // xoayYNguoc
+            // 
+            this.xoayYNguoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.xoayYNguoc.Image = global::Graphing3D.Properties.Resources._4;
+            this.xoayYNguoc.Location = new System.Drawing.Point(746, 6);
+            this.xoayYNguoc.Name = "xoayYNguoc";
+            this.xoayYNguoc.Size = new System.Drawing.Size(30, 30);
+            this.xoayYNguoc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.xoayYNguoc.TabIndex = 21;
+            this.xoayYNguoc.TabStop = false;
+            this.xoayYNguoc.Click += new System.EventHandler(this.xoayYNguoc_Click);
+            // 
+            // xoayXXuoi
+            // 
+            this.xoayXXuoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.xoayXXuoi.Image = global::Graphing3D.Properties.Resources._2;
+            this.xoayXXuoi.Location = new System.Drawing.Point(780, 39);
+            this.xoayXXuoi.Name = "xoayXXuoi";
+            this.xoayXXuoi.Size = new System.Drawing.Size(30, 30);
+            this.xoayXXuoi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.xoayXXuoi.TabIndex = 20;
+            this.xoayXXuoi.TabStop = false;
+            this.xoayXXuoi.Click += new System.EventHandler(this.xoayXXuoi_Click);
+            // 
+            // xoayXNguoc
+            // 
+            this.xoayXNguoc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.xoayXNguoc.Image = global::Graphing3D.Properties.Resources._1;
+            this.xoayXNguoc.Location = new System.Drawing.Point(714, 39);
+            this.xoayXNguoc.Name = "xoayXNguoc";
+            this.xoayXNguoc.Size = new System.Drawing.Size(30, 30);
+            this.xoayXNguoc.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.xoayXNguoc.TabIndex = 19;
+            this.xoayXNguoc.TabStop = false;
+            this.xoayXNguoc.Click += new System.EventHandler(this.xoayXNguoc_Click);
             // 
             // label7
             // 
@@ -300,33 +357,15 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "F(z,y,z):";
             // 
-            // buttonTurnY
-            // 
-            this.buttonTurnY.Location = new System.Drawing.Point(18, 53);
-            this.buttonTurnY.Name = "buttonTurnY";
-            this.buttonTurnY.Size = new System.Drawing.Size(50, 30);
-            this.buttonTurnY.TabIndex = 10;
-            this.buttonTurnY.Text = "Y";
-            this.buttonTurnY.UseVisualStyleBackColor = true;
-            // 
             // buttonPaint3D
             // 
-            this.buttonPaint3D.Location = new System.Drawing.Point(50, 17);
+            this.buttonPaint3D.Location = new System.Drawing.Point(49, 39);
             this.buttonPaint3D.Name = "buttonPaint3D";
             this.buttonPaint3D.Size = new System.Drawing.Size(50, 30);
             this.buttonPaint3D.TabIndex = 9;
             this.buttonPaint3D.Text = "Paint";
             this.buttonPaint3D.UseVisualStyleBackColor = true;
             this.buttonPaint3D.Click += new System.EventHandler(this.buttonPaint3D_Click);
-            // 
-            // buttonTurnX
-            // 
-            this.buttonTurnX.Location = new System.Drawing.Point(86, 53);
-            this.buttonTurnX.Name = "buttonTurnX";
-            this.buttonTurnX.Size = new System.Drawing.Size(50, 30);
-            this.buttonTurnX.TabIndex = 8;
-            this.buttonTurnX.Text = "X";
-            this.buttonTurnX.UseVisualStyleBackColor = true;
             // 
             // textBoxInfo3D
             // 
@@ -384,6 +423,7 @@
             this.textBoxFxyz.Name = "textBoxFxyz";
             this.textBoxFxyz.Size = new System.Drawing.Size(139, 21);
             this.textBoxFxyz.TabIndex = 2;
+            this.textBoxFxyz.Text = "x^2 + y^2";
             // 
             // listView3D
             // 
@@ -403,9 +443,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3D.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3D.Location = new System.Drawing.Point(336, 0);
+            this.pictureBox3D.Location = new System.Drawing.Point(337, 0);
             this.pictureBox3D.Name = "pictureBox3D";
             this.pictureBox3D.Size = new System.Drawing.Size(480, 373);
+            this.pictureBox3D.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3D.TabIndex = 0;
             this.pictureBox3D.TabStop = false;
             // 
@@ -424,6 +465,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2D)).EndInit();
             this.tabPage3D.ResumeLayout(false);
             this.tabPage3D.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xoayYXuoi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xoayYNguoc)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xoayXXuoi)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xoayXNguoc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3D)).EndInit();
             this.ResumeLayout(false);
 
@@ -443,9 +488,7 @@
         private System.Windows.Forms.TextBox textBoxXMax2D;
         private System.Windows.Forms.TextBox textBoxXMin2D;
         private System.Windows.Forms.TextBox textBoxInfo2D;
-        private System.Windows.Forms.Button buttonTurnY;
         private System.Windows.Forms.Button buttonPaint3D;
-        private System.Windows.Forms.Button buttonTurnX;
         private System.Windows.Forms.TextBox textBoxInfo3D;
         private System.Windows.Forms.TextBox textBoxYMax3D;
         private System.Windows.Forms.TextBox textBoxYMin3D;
@@ -463,6 +506,10 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.PictureBox xoayXXuoi;
+        private System.Windows.Forms.PictureBox xoayXNguoc;
+        private System.Windows.Forms.PictureBox xoayYNguoc;
+        private System.Windows.Forms.PictureBox xoayYXuoi;
     }
 }
 

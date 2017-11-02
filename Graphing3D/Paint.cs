@@ -11,62 +11,64 @@ namespace Graphing3D
 {
     unsafe class Paint
     {
-        [DllImport("C:\\Users\\San\\Desktop\\plplot\\build\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
+
+        [DllImport("C:\\Users\\San\\Desktop\\plplot-5.13.0\\Build_New\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern void c_plinit();
-        [DllImport("C:\\Users\\San\\Desktop\\plplot\\build\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:\\Users\\San\\Desktop\\plplot-5.13.0\\Build_New\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern void plMinMax2dGrid(double** z, int nx, int ny, ref double fmax, ref double fmin);
-        [DllImport("C:\\Users\\San\\Desktop\\plplot\\build\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:\\Users\\San\\Desktop\\plplot-5.13.0\\Build_New\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern void c_plscmap1n(int ncol1);
-        [DllImport("C:\\Users\\San\\Desktop\\plplot\\build\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:\\Users\\San\\Desktop\\plplot-5.13.0\\Build_New\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern void c_plscmap1l(int itype, int npts, double[] intensity,
              double[] coord1, double[] coord2, double[] coord3, int[] alt_hue_path);
-        [DllImport("C:\\Users\\San\\Desktop\\plplot\\build\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:\\Users\\San\\Desktop\\plplot-5.13.0\\Build_New\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern void c_pladv(int page);
-        [DllImport("C:\\Users\\San\\Desktop\\plplot\\build\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:\\Users\\San\\Desktop\\plplot-5.13.0\\Build_New\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern void c_plcol0(int icol0);
-        [DllImport("C:\\Users\\San\\Desktop\\plplot\\build\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:\\Users\\San\\Desktop\\plplot-5.13.0\\Build_New\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern void c_plvpor(double xmin, double xmax, double ymin, double ymax);
-        [DllImport("C:\\Users\\San\\Desktop\\plplot\\build\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:\\Users\\San\\Desktop\\plplot-5.13.0\\Build_New\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern void c_plwind(double xmin, double xmax, double ymin, double ymax);
-        [DllImport("C:\\Users\\San\\Desktop\\plplot\\build\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:\\Users\\San\\Desktop\\plplot-5.13.0\\Build_New\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern void c_plw3d(double basex, double basey, double height, double xmin, double xmax,
                                                             double ymin, double ymax, double zmin, double zmax, double alt, double az);
-        [DllImport("C:\\Users\\San\\Desktop\\plplot\\build\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:\\Users\\San\\Desktop\\plplot-5.13.0\\Build_New\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern void c_plbox3(string xopt, string xlabel, double xtick, int nxsub,
                                                               string yopt, string ylabel, double ytick, int nysub,
                                                               string zopt, string zlabel, double ztick, int nzsub);
-        [DllImport("C:\\Users\\San\\Desktop\\plplot\\build\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:\\Users\\San\\Desktop\\plplot-5.13.0\\Build_New\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern void c_plmeshc(double[] x, double[] y, double** z, int nx, int ny, int opt, double[] clevel, int nlevel);
-        [DllImport("C:\\Users\\San\\Desktop\\plplot\\build\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:\\Users\\San\\Desktop\\plplot-5.13.0\\Build_New\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern void c_plmtex(string side, double disp, double pos, double just, string text);
-        [DllImport("C:\\Users\\San\\Desktop\\plplot\\build\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:\\Users\\San\\Desktop\\plplot-5.13.0\\Build_New\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern void c_plend();
-
-        [DllImport("C:\\Users\\San\\Desktop\\plplot\\build\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:\\Users\\San\\Desktop\\plplot-5.13.0\\Build_New\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern void c_plsdev(string devname);
-
-        [DllImport("C:\\Users\\San\\Desktop\\plplot\\build\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:\\Users\\San\\Desktop\\plplot-5.13.0\\Build_New\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern void plFree2dGrid(double** f, int nx, int ny);
-
-        [DllImport("C:\\Users\\San\\Desktop\\plplot\\build\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:\\Users\\San\\Desktop\\plplot-5.13.0\\Build_New\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
         protected static extern int plAlloc2dGrid(ref double** f, int nx, int ny);
-
-        [DllImport("C:\\Users\\San\\Desktop\\plplot\\build\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("C:\\Users\\San\\Desktop\\plplot-5.13.0\\Build_New\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
         protected static extern int c_plsfnam(String fnam);
-
         [DllImport("C:\\Users\\San\\Desktop\\plplot-5.13.0\\Build_New\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern void c_plline(int n, double[] x, double[] y);
-
         [DllImport("C:\\Users\\San\\Desktop\\plplot-5.13.0\\Build_New\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern void c_plenv(double xmin, double xmax, double ymin, double ymax, int just, int axis);
-
         [DllImport("C:\\Users\\San\\Desktop\\plplot-5.13.0\\Build_New\\dll\\Debug\\plplot.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern void c_pllab(string xlabel, string ylabel, string tlabel);
 
-        const int LEVELS = 5;
-        const int DRAW_LINEXY = 3; // draw lines parallel to both the X and Y axis
-        const int MAG_COLOR = 4;  // draw the mesh with a color dependent of the magnitude
-        const int BASE_CONT = 8; // draw contour plot at bottom xy plane
+        const int LEVELS = 10;
+        const int MAG_COLOR = 0x004;// draw lines parallel to both the X and Y axis                               
+        const int BASE_CONT = 0x008; // draw the mesh with a color dependent of the magnitude                         
+        const int DRAW_LINEXY = 0x003;    // draw contour plot at bottom xy plane
+
+        private int XPTS ;          // so diem muon ve tren truc x
+        private int YPTS;
+        double** z = null;
+        double[] clevel = null;
+        double xmin, xmax, ymin, ymax, zmin, zmax;
+        double[] x = null;
+        double[] y = null;
 
         static void cmap1_init()
         {
@@ -90,12 +92,14 @@ namespace Graphing3D
         }
 
 
-        public void Paint2D(double xMin,double xMax,ListView list,String funtion2D)
+
+  
+        public void Paint2D(double xMin,double xMax,ListView list,String funtion2D,int n)
         {
             double yMin = 10000, yMax = -10000;
-            int NSIZE = (int)(xMax - xMin) * 10;
-            double[] x = new double[NSIZE];
-            double[] y = new double[NSIZE];
+            int NSIZE = 101;
+            x = new double[NSIZE];
+            y = new double[NSIZE];
 
             double step = (double)(xMax - xMin) / (double)NSIZE;
 
@@ -112,13 +116,12 @@ namespace Graphing3D
                 IGenericExpression<double> eGeneric = context.CompileGeneric<double>(funtion2D);
                 // Evaluate the expressions
                 y[i] = eGeneric.Evaluate();
-
                 loadListView(x[i], y[i], list);
-
                 if (yMax < y[i]) yMax = y[i];
                 if (yMin > y[i]) yMin = y[i];
             }
-            c_plsfnam("demo2d.svg");
+
+            c_plsfnam("demo2d"+n);
             c_plsdev("svg");
             c_plinit();
 
@@ -126,42 +129,51 @@ namespace Graphing3D
             c_plcol0(1);
 
             c_plenv(xMin, xMax, yMin, yMax, 0, 0);
-            c_pllab("x", "y=100 x#u2#d", "Simple PLplot demo of a 2D line plot");
+            c_pllab("x", "y", "Do thi: y = "+funtion2D);
 
             // Plot the data that was prepared above.
-            c_plline(NSIZE, x, y);
+            c_plline(NSIZE , x, y);
 
             // Close PLplot library
             c_plend();
 
         }
 
-        public void Paint3D(double xmin, double xmax, double ymin, double ymax,ListView list, String funtion3D, double xoayX, double xoayY)
+        public void funtion3D(double xMin, double xMax, double yMin, double yMax,ListView list, String funtion3D)
         {
-            int XPTS = (int)((xmax - xmin) * 2);          // so diem muon ve tren truc x
-            int YPTS = (int)((ymax - ymin) * 2);           //
+            xmin = xMin;
+            xmax = xMax;
+            ymin = yMin;
+            ymax = yMax;
+
+            XPTS = (int)((xMax - xMin) * 10);          // so diem muon ve tren truc x
+            YPTS = (int)((yMax - yMin) * 10);           //
+
             int i, j;
+            x = new double[XPTS];
+            y = new double[YPTS];
+
             int nlevel = LEVELS;
-            double[] clevel = new double[LEVELS];
-            double zmin = 1;
-            double zmax = 1;
-            double step = 0;
+            clevel = new double[LEVELS];
+            double  step;
 
-            double[] x = new double[XPTS];
-            double[] y = new double[YPTS];
-            double** z = null;
+            // Parse and process command line arguments
+
+            // (void)plparseopts(&argc, argv, PL_PARSE_FULL);
+
+            // Initialize plplot
+            
             plAlloc2dGrid(ref z, XPTS, YPTS);
-
-            double stepx = (xmax - xmin) / XPTS;
-            double stepy = (ymax - ymin) / YPTS;
+            double stepx = (xMax - xMin) / XPTS;
+            double stepy = (yMax - yMin) / YPTS;
             for (i = 0; i < XPTS; i++)
             {
-                x[i] = xmin + i * stepx;
+                x[i] = xMin + i * stepx;
             }
 
             for (i = 0; i < YPTS; i++)
             {
-                y[i] = ymin + i * stepy;
+                y[i] = yMin + i * stepy;
             }
 
             for (i = 0; i < XPTS; i++)
@@ -177,31 +189,43 @@ namespace Graphing3D
                     IGenericExpression<double> eGeneric = context.CompileGeneric<double>(funtion3D);
                     // Evaluate the expressions
                     z[i][j] = (double)eGeneric.Evaluate();
-
-                    loadListView(x[i], y[i], z[i][j],list);
+                    loadListView(x[i], y[j], z[i][j], list);
                 }
             }
-            plMinMax2dGrid(z, XPTS, YPTS, ref zmax, ref zmin);
-            step = (zmax - zmin) / (nlevel + 1);
-            for (i = 0; i < nlevel; i++)
 
-            c_plsfnam("demo3d.svg");
+            plMinMax2dGrid(z, XPTS, YPTS, ref zmax, ref zmin);
+
+            step = (zmax - zmin) / (nlevel + 1);
+
+            for (i = 0; i < nlevel; i++)
+                clevel[i] = zmin + step + step * i;
+          
+        }
+
+        public void Paint3D(String funtion3D,double xoayOY, double xoayOZ,int n)
+        {
             c_plsdev("svg");
+            c_plsfnam("demo3d"+n);
             c_plinit();
             cmap1_init();
+            c_pladv(0);
+            c_plcol0(1);
+            c_plvpor(0.0, 1.0, 0.0, 0.9);
+            c_plwind(-1.0, 1.0, -1.0, 1.5);
 
-            c_plcol0(7);
-            c_plenv(-1, 1, -0.7, 1.3, 0, -2);
-            c_plw3d(1.0, 1.0, 1.0, xmin, xmax, ymin, ymax, zmin, zmax, xoayX, xoayY);
+            c_plw3d(1.0, 1.0, 1.2, xmin, xmax, ymin, ymax, zmin, (int)(zmax - 0.1) + 1, xoayOY, xoayOZ);
+            c_plbox3("bnstu", "x axis", 0.0, 0,
+                        "bnstu", "y axis", 0.0, 0,
+                        "bcdmnstuv", "z axis", 0.0, 4);
+            c_plcol0(2);
 
-            c_plcol0(7);
-            c_plbox3("bnstu", "x axis", 0.0, 0, "bnstu", "y axis", 0.0, 0, "bcdmnstuv", "z axis", 0.0, 4);
-            c_plmeshc(x, y, z, XPTS, YPTS, DRAW_LINEXY | MAG_COLOR | BASE_CONT, clevel, nlevel);
+            c_plmeshc(x, y, z, XPTS, YPTS, DRAW_LINEXY | MAG_COLOR | BASE_CONT, clevel, 10);
 
-            c_plcol0(15);
+            c_plcol0(3);
             c_plmtex("t", 1, 0.5, 0.5, "#frDo thi: z=" + funtion3D);
 
-            plFree2dGrid(z, XPTS, YPTS);
+            //plFree2dGrid(z, XPTS, YPTS);
+
             c_plend();
         }
 
