@@ -94,10 +94,10 @@ namespace Graphing3D
 
 
   
-        public void Paint2D(double xMin,double xMax,ListView list,String funtion2D,int n)
+        public void Paint2D(double xMin,double xMax,ListView list,String funtion2D)
         {
             double yMin = 10000, yMax = -10000;
-            int NSIZE = 101;
+            int NSIZE =(int) (xMax-xMin)*100;
             x = new double[NSIZE];
             y = new double[NSIZE];
 
@@ -121,7 +121,7 @@ namespace Graphing3D
                 if (yMin > y[i]) yMin = y[i];
             }
 
-            c_plsfnam("demo2d"+n);
+            c_plsfnam("demo2d");
             c_plsdev("svg");
             c_plinit();
 
@@ -202,10 +202,10 @@ namespace Graphing3D
           
         }
 
-        public void Paint3D(String funtion3D,double xoayOY, double xoayOZ,int n)
+        public void Paint3D(String funtion3D,double xoayOY, double xoayOZ)
         {
             c_plsdev("svg");
-            c_plsfnam("demo3d"+n);
+            c_plsfnam("demo3d");
             c_plinit();
             cmap1_init();
             c_pladv(0);
@@ -228,7 +228,6 @@ namespace Graphing3D
 
             c_plend();
         }
-
         private void loadListView(double x, double y, ListView list)
         {
             ListViewItem item = new ListViewItem();

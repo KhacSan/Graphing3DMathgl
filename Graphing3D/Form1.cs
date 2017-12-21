@@ -19,10 +19,10 @@ namespace Graphing3D
     {
         private double xMin2D,xMax2D,xMin3D,xMax3D ,yMin,yMax ;
         SvgBitmap btm;
-        private int check,i,j;
+        private int check;
         Paint paint3D = null, paint2D = null;
         private double xoayQuanhOy = 33.0, xoayQuanhOz = 24.0;
-
+        Bitmap bitmap = null;
         public Form1()
         {
             InitializeComponent();
@@ -37,11 +37,7 @@ namespace Graphing3D
             paint2D = new Paint();
             paint3D = new Paint();
             check = 0;
-            i = 1;
-            j = 1;
         }
-
-       
 
         private void textBoxXMax2D_TextChanged(object sender, EventArgs e)
         {
@@ -129,20 +125,49 @@ namespace Graphing3D
         
         public void renderPicture2D()
         {
-           
-            SaveImage(600, Application.StartupPath+"\\demo2d"+i);
-            pictureBox2D.Image = new Bitmap(Application.StartupPath + "\\demo2d"+i+".png");
-            if (i == 5) i = 1;
-            else  i++;       
+           if(bitmap != null)
+            {
+                bitmap.Dispose();
+            }
+            SaveImage(600, Application.StartupPath + "\\demo2d");
+            try
+            {
+                // Retrieve the image.
+               bitmap = (Bitmap)Image.FromFile(Application.StartupPath + "\\demo2d.png", true);
+               pictureBox2D.Image = bitmap;
+                
+            }
+            catch (ArgumentException)
+            {
+                MessageBox.Show("There was an error." +
+                    "Check the path to the image file.");
+            }
+       
         }
 
         public void renderPicture3D()
         {
-           
-            SaveImage(600, Application.StartupPath+"\\demo3d"+j);
-            pictureBox3D.Image = new Bitmap(Application.StartupPath + "\\demo3d"+j+".png");
-            if (j == 5) j = 1;
-            else j++;
+            if(bitmap != null)
+            {
+                bitmap.Dispose();
+            }
+            SaveImage(600, Application.StartupPath + "\\demo3d");
+            try
+            {
+                // Retrieve the image.
+                bitmap = new Bitmap(Application.StartupPath+"\\demo3d.png", true);
+                pictureBox3D.Image = bitmap;
+
+            }
+            catch (ArgumentException)
+            {
+                MessageBox.Show("There was an error." +
+                    "Check the path to the image file.");
+            }
+
+            //SaveImage(600, Application.StartupPath+"\\demo3d"+j);
+            //pictureBox3D.Image = new Bitmap(Application.StartupPath + "\\demo3d" + j + ".png"); if (j == 5) j = 1;
+            //else j++;
         }
 
         private void buttonPaint2D_Click(object sender, EventArgs e)
@@ -219,7 +244,7 @@ namespace Graphing3D
             {
                 xoayQuanhOz -= 20.0;
                 if (xoayQuanhOz <= 0.0) xoayQuanhOz = 360.0;
-                paint3D.Paint3D(textBoxFxyz.Text, xoayQuanhOy, xoayQuanhOz,j);
+                paint3D.Paint3D(textBoxFxyz.Text, xoayQuanhOy, xoayQuanhOz);
                 renderPicture3D();
             }
         }
@@ -230,7 +255,7 @@ namespace Graphing3D
             {
                 xoayQuanhOy -= 10.0;
                 if (xoayQuanhOy <= 0.0) xoayQuanhOy = 1.0;
-                paint3D.Paint3D(textBoxFxyz.Text, xoayQuanhOy, xoayQuanhOz,j);
+                paint3D.Paint3D(textBoxFxyz.Text, xoayQuanhOy, xoayQuanhOz);
                 renderPicture3D();
             }
         }
@@ -241,7 +266,7 @@ namespace Graphing3D
             {
                 xoayQuanhOy += 10.0;
                 if (xoayQuanhOy >= 90.0) xoayQuanhOy = 89.0;
-                paint3D.Paint3D(textBoxFxyz.Text, xoayQuanhOy, xoayQuanhOz,j);
+                paint3D.Paint3D(textBoxFxyz.Text, xoayQuanhOy, xoayQuanhOz);
                 renderPicture3D();
             }
         }
@@ -252,21 +277,21 @@ namespace Graphing3D
             {
                 xoayQuanhOz += 20.0;
                 if (xoayQuanhOz >= 360.0) xoayQuanhOz = 0.0;
-                paint3D.Paint3D(textBoxFxyz.Text, xoayQuanhOy, xoayQuanhOz,j);
+                paint3D.Paint3D(textBoxFxyz.Text, xoayQuanhOy, xoayQuanhOz);
                 renderPicture3D();
             }
         }
 
         private void paint2d()
         {
-            paint2D.Paint2D(xMin2D, xMax2D, listView2D, textBoxFxy.Text,i);
+            paint2D.Paint2D(xMin2D, xMax2D, listView2D, textBoxFxy.Text);
             renderPicture2D();
         }
 
         private void paint3d()
         {     
             paint3D.funtion3D(xMin3D, xMax3D, yMin, yMax, listView3D, textBoxFxyz.Text);
-            paint3D.Paint3D(textBoxFxyz.Text, xoayQuanhOy, xoayQuanhOz,j);
+            paint3D.Paint3D(textBoxFxyz.Text, xoayQuanhOy, xoayQuanhOz);
             renderPicture3D();
             check = 1;
         }
