@@ -38,6 +38,7 @@ namespace Graphing3D
         public Form1()
         {
             InitializeComponent();
+            Control.CheckForIllegalCrossThreadCalls = false;
             listView2D.View = View.Details;
             listView2D.Columns.Add("X", 70);
             listView2D.Columns.Add("Y", 70);
@@ -186,7 +187,7 @@ namespace Graphing3D
 
         private void buttonPaint2D_Click(object sender, EventArgs e)
         {
-            if (textBoxFxy.Text.Equals("") || textBoxXMin2D.Text.Equals("") || textBoxXMax2D.Text.Equals(""))
+            if (textBoxFxy.Text.Trim().Equals("") || textBoxXMin2D.Text.Trim().Equals("") || textBoxXMax2D.Text.Trim().Equals(""))
             {
                 const string message = "Vui lòng nhập đủ thông tin!";
                 const string caption = "Error";
@@ -370,7 +371,7 @@ namespace Graphing3D
             {
                 bitmap2d.Dispose();
             }
-            double* data = plotting1DArrays(textBoxFxy.Text.ToString(), xMin2D, xMax2D);
+            double* data = plotting1DArrays(textBoxFxy.Text.Trim(), xMin2D, xMax2D);
             renderPicture2D();
             double xx = (xMax2D - xMin2D) / 100;
             for (int i = 0; i < 101; i++)
@@ -388,12 +389,12 @@ namespace Graphing3D
 
             if (textBoxFxyz.Text.Contains("z") || textBoxFxyz.Text.Contains("Z"))
             {
-                double* data = plotting3DArrays(textBoxFxyz.Text, xMin3D, xMax3D, yMin, yMax, zMin, zMax, xoayQuanhOx, xoayQuanhOz, 0);
+                double* data = plotting3DArrays(textBoxFxyz.Text.Trim(), xMin3D, xMax3D, yMin, yMax, zMin, zMax, xoayQuanhOx, xoayQuanhOz, 0);
                 renderPicture3D(data, 0);
             }
             else
             {
-                double* data = plotting2DArrays(textBoxFxyz.Text, xMin3D, xMax3D, yMin, yMax, xoayQuanhOx, xoayQuanhOz, 0);
+                double* data = plotting2DArrays(textBoxFxyz.Text.Trim(), xMin3D, xMax3D, yMin, yMax, xoayQuanhOx, xoayQuanhOz, 0);
                 renderPicture3D(data, 1);
             }
             check = 1;
@@ -402,7 +403,7 @@ namespace Graphing3D
         private void buttonPaint3D_Click(object sender, EventArgs e)
         {
 
-            if (textBoxFxyz.Text.Equals("") || textBoxXMin3D.Text.Equals("") || textBoxXMax3D.Text.Equals("")
+            if (textBoxFxyz.Text.Trim().Equals("") || textBoxXMin3D.Text.Trim().Equals("") || textBoxXMax3D.Text.Trim().Equals("")
                 || textBoxYMin3D.Text.Equals("") || textBoxYMax3D.Text.Equals(""))
             {
                 MessageBox.Show("Vui lòng nhập đủ thông tin !");
@@ -424,6 +425,10 @@ namespace Graphing3D
                     {
                         check = 0;
                         listView3D.Items.Clear();
+                        //ThreadStart start = new ThreadStart(paint3d);
+                        //Thread thr = new Thread(start);
+                        //thr.IsBackground = true;
+                        //thr.Start();
                         paint3d();
                     }
                 }
